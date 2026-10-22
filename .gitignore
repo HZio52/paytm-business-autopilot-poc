@@ -1,0 +1,7 @@
+# Local database created by the backend (recreated automatically on start)
+backend/data/
+__pycache__/
+*.pyc
+.venv/
+venv/
+_backup_before_fixes/

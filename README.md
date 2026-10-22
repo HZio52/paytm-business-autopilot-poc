@@ -23,6 +23,12 @@ Demo data is synthetic. Demo state is saved in the browser on the device only us
 
 A production version would add a secure backend for merchant authentication, Paytm payment and settlement integrations, consent records, customer data protection, message-provider integration, scheduled agent jobs, audit logs, and a real database. Those integrations should not use the synthetic demo credentials or local browser state from this repository.
 
+## Backend (new)
+
+A Python + FastAPI + SQLite backend now computes every number from a database of synthetic payments and saves every action. See `BACKEND-GUIDE.md` for step-by-step setup. Without the backend, the app falls back to the browser-only mode described above.
+
 ## Run locally
 
-Open `index.html` in a modern browser, or serve the folder with any static web server.
+With the backend: `python -m uvicorn backend.main:app --reload`, then open http://127.0.0.1:8000 (API docs at /docs).
+
+Without the backend: open `index.html` in a modern browser, or serve the folder with any static web server.
